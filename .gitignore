@@ -7,9 +7,6 @@ quadris
 # Qmake
 .qmake.*
 
-# Makefile Generated Locally
-Makefile
-
 # VS Code
 .vscode
 *.code-workspace
