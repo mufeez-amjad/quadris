@@ -58,7 +58,8 @@ block_ptr Board::getCurrentBlock(void) const
 
 void Board::setNextBlock(block_ptr nextBlock)
 {
-	assert(nextBlock != nullptr);
+	if (nextBlock == nullptr)
+		return;
 	this->_nextBlock = nextBlock;
 }
 
