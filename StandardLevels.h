@@ -92,6 +92,8 @@ private:
 
 class Level4;
 
+// Level3 decorates level0 to allow it to use Level0's implementation of
+// getting the next block from a sequence.txt file.
 class Level3 : public Level0
 {
 public:
@@ -120,11 +122,13 @@ private:
 				return std::make_unique<Level3>(filePath, gameRef, rand, sin);
 			};
 	};
-
+	// Level 0 component
 	Level0 _level0;
 };
 
-
+// Level4 decorates Level3 to allow it to use Level3's implementation of
+// getNextBlock with the same probability, as well as its level0 method
+// to getNextBlock from a sequence.txt file.
 class Level4 : public Level3
 {
 public:
@@ -151,7 +155,7 @@ private:
 				return std::make_unique<Level4>(filePath, gameRef, rand, sin);
 			};
 	};
-
+	// Level 3 component
 	Level3 _level3;
 };
 

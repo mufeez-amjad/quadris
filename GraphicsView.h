@@ -5,7 +5,7 @@
 #include <QApplication>
 
 #include "View.h"
-#include "../window/Window.h"
+#include "Window.h"
 
 class GraphicsView : public View
 {

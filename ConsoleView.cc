@@ -57,7 +57,7 @@ void ConsoleView::_readActiveInputStream(std::string& str)
 
 void ConsoleView::_buildTrie()
 {
-	std::ifstream infile("./src/controller/commands.txt");
+	std::ifstream infile("./commands.txt");
 	std::string command;
 	int id;
 	while (infile >> command >> id)

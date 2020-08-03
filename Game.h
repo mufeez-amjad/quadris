@@ -6,9 +6,9 @@
 #include <vector>
 #include <unordered_map>
 
-#include "../generic/Subject.h"
-#include "../blocks/Board.h"
-#include "../controller/Command.h"
+#include "Subject.h"
+#include "Board.h"
+#include "Command.h"
 #include "Level.h"
 #include "StandardLevels.h"
 

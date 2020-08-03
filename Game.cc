@@ -4,7 +4,7 @@
 #include <string>
 #include <cmath>
 
-#include "./blocks/StandardBlocks.h"
+#include "StandardBlocks.h"
 
 /*
 	- GUI buttons
@@ -152,7 +152,6 @@ void Game::_handleDrop(void)
 	if (this->_board.setCurrentBlock(this->_board.getNextBlock()) == false) {
 		// if a new block cannot be added, the game is over
 		this->restart();
-		std::cerr << "Game Over!\n";
 		return;
 	}
 	this->_setNextBlock();
@@ -309,44 +308,44 @@ void Game::_resetHint(void)
 
 void Game::_calculateHint(void)
 {
-	std::shared_ptr<Block> hintBlock = this->_board.getHintBlock();
-
-	int maxScore = -1;
-
-	Coord hintLocation = hintBlock->_bottomLeft;
-
-	for (int i = 0; i < 3; i++) {
-		this->_resetHint();
-		for (int r = 0; r < i; ++r)
-			this->_board.rotate(true, hintBlock);
-
-		// traverse to the right
-		for (int j = hintLocation._x; j < BOARD_WIDTH; j++) {
-
-			// move block to column
-			for (int k = hintLocation._x; k < j; k++)
-				this->_board.translate(Direction::RIGHT, hintBlock);
-
-			// move down if heavy
-			if (this->_board.getCurrentBlock()->isHeavy());
-				this->_board.translate(Direction::DOWN, hintBlock);
-
-			//this->_board.drop(hintBlock);
-		}
-
-		// traverse to the left
-		for (int j = hintLocation._x - 1; j >= 0; j--) {
-			hintBlock->setPosition(hintLocation);
-
-			for (int k = hintLocation._x; k > j; k--)
-				this->_board.translate(Direction::LEFT, hintBlock);
-			if (this->_board.getCurrentBlock()->isHeavy());
-				this->_board.translate(Direction::DOWN, hintBlock);
-
-		}
-	}
 	// for every orientation
 	//		for every column
 	//			drop and calculate score
 	// modify hint block to have coordinates
+
+	// std::shared_ptr<Block> hintBlock = this->_board.getHintBlock();
+
+	// int maxScore = -1;
+
+	// Coord hintLocation = hintBlock->_bottomLeft;
+
+	// for (int i = 0; i < 3; i++) {
+	// 	this->_resetHint();
+	// 	for (int r = 0; r < i; ++r)
+	// 		this->_board.rotate(true, hintBlock);
+
+	// 	// traverse to the right
+	// 	for (int j = hintLocation._x; j < BOARD_WIDTH; j++) {
+
+	// 		// move block to column
+	// 		for (int k = hintLocation._x; k < j; k++)
+	// 			this->_board.translate(Direction::RIGHT, hintBlock);
+
+	// 		// move down if heavy
+	// 		if (this->_board.getCurrentBlock()->isHeavy());
+	// 			this->_board.translate(Direction::DOWN, hintBlock);
+
+	// 		//this->_board.drop(hintBlock);
+	// 	}
+
+	// 	// traverse to the left
+	// 	for (int j = hintLocation._x - 1; j >= 0; j--) {
+
+	// 		for (int k = hintLocation._x; k > j; k--)
+	// 			this->_board.translate(Direction::LEFT, hintBlock);
+	// 		if (this->_board.getCurrentBlock()->isHeavy());
+	// 			this->_board.translate(Direction::DOWN, hintBlock);
+
+	// 	}
+	// }
 }

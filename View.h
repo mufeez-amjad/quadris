@@ -1,8 +1,8 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include "../game/Game.h"
-#include "../controller/Controller.h"
+#include "Game.h"
+#include "Controller.h"
 
 #include <string>
 

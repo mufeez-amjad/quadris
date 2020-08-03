@@ -5,9 +5,8 @@ TARGET = quadris
 QT += core gui widgets
 
 INCLUDEPATH += ./
-INCLUDEPATH += ./src/
 
-PRECOMPILED_HEADER = ./src/stable.h
+PRECOMPILED_HEADER = ./stable.h
 
 # Source Files
 SOURCES = $$files(*.cc, true)

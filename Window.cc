@@ -1,5 +1,5 @@
 #include "Window.h"
-#include "../Arguments.h"
+#include "Arguments.h"
 
 #include <iostream>
 

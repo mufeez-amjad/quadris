@@ -5,8 +5,8 @@
 #include <thread>
 
 #include "View.h"
-#include "../game/Game.h"
-#include "../generic/Trie.h"
+#include "Game.h"
+#include "Trie.h"
 
 class ConsoleView : public View
 {

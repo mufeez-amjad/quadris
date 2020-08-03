@@ -4,11 +4,11 @@
 #include <algorithm>
 #include <fstream>
 
-#include "views/ConsoleView.h"
-#include "views/GraphicsView.h"
-#include "views/ViewManager.h"
-#include "game/Game.h"
-#include "controller/Controller.h"
+#include "ConsoleView.h"
+#include "GraphicsView.h"
+#include "ViewManager.h"
+#include "Game.h"
+#include "Controller.h"
 #include "Arguments.h"
 
 int main(int argc, char* argv[])
@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 		std::srand(seed);
 	}
 
-	Game game(startLevel, std::string("./src/game/sequence.txt"));
+	Game game(startLevel, std::string("./sequence.txt"));
 	Controller ctrl(game);
 	ViewManager views;
 

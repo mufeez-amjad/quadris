@@ -14,12 +14,14 @@ int Level::getLevel(void) const
 	return this->_level;
 }
 
+// Close ifstreasm object
 void Level::closeSequence(void)
 {
 	if (this->_sequence->is_open())
 		this->_sequence->close();
 }
 
+// Set new filePath and open it to ifstream object
 void Level::openSequence(const std::string& sequenceFile)
 {
 	// if a sequence file is open, close it first
@@ -28,6 +30,7 @@ void Level::openSequence(const std::string& sequenceFile)
 	this->_sequence->open(this->_filePath);
 }
 
+// Switch to random or norandom mode for sequenced input
 void Level::useRandom(bool random)
 {
 	this->_random = random;

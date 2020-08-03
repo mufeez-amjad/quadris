@@ -245,7 +245,7 @@ DBlock::DBlock(int level)
 }
 
 
-// Block Methods
+// Block Methods ===============================================================
 BlockType Block::getType(void)
 {
 	return this->_type;
@@ -342,9 +342,4 @@ void Block::copyCells(std::shared_ptr<Block> block)
 		Cell cell = *c;
 		this->_cells.push_back(std::make_shared<Cell>(cell));
 	}
-}
-
-void Block::setPosition(Coord bottomLeft)
-{
-	this->_bottomLeft = bottomLeft;
 }

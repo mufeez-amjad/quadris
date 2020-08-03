@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <memory>
 
-#include "../controller/Command.h"
+#include "Command.h"
 
 class TrieNode
 {

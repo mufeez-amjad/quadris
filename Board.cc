@@ -58,9 +58,8 @@ block_ptr Board::getCurrentBlock(void) const
 
 void Board::setNextBlock(block_ptr nextBlock)
 {
-	if (nextBlock == nullptr)
-		std::cerr << "nullptr next block\n";
-	this ->_nextBlock = nextBlock;
+	assert(nextBlock != nullptr);
+	this->_nextBlock = nextBlock;
 }
 
 block_ptr Board::getNextBlock(void) const
@@ -137,16 +136,12 @@ bool Board::_validTranslation(Direction direction, block_ptr block)
 	for (auto& c : cells) {
 		Coord newPos = c->_coords + delta;
 		// if the new position is out of bounds, return false
-		if (!this->_inBounds(newPos)) {
-			// std::cerr << "not in bounds\n";
+		if (!this->_inBounds(newPos))
 			return false;
-		}
 
 		// if the new position is not empty cells, return false
-		if (this->at(newPos).getType() != BlockType::EMPTY) {
-			// std::cerr << "not empty block\n";
+		if (this->at(newPos).getType() != BlockType::EMPTY)
 			return false;
-		}
 	}
 	return true;
 }
@@ -376,12 +371,12 @@ void Board::removeHint(void)
 
 void Board::createHintBlock(void)
 {
-	assert(this->_currentBlock != nullptr);
+	// assert(this->_currentBlock != nullptr);
 
-	// create hint block copy of current block
-	Block hintBlock = *this->_currentBlock;
-	hintBlock.copyCells(this->_currentBlock);
-	hintBlock.setType(BlockType::HINT);
-	hintBlock.setSprite("./assets/b_.png"); // TODO: need black sprite
-	this->_hintBlock = std::make_shared<Block>(hintBlock);
+	// // create hint block copy of current block
+	// Block hintBlock = *this->_currentBlock;
+	// hintBlock.copyCells(this->_currentBlock);
+	// hintBlock.setType(BlockType::HINT);
+	// hintBlock.setSprite("./assets/b_.png"); // TODO: need black sprite
+	// this->_hintBlock = std::make_shared<Block>(hintBlock);
 }

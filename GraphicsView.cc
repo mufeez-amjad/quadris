@@ -3,7 +3,7 @@
 #include <iostream>
 #include <unordered_map>
 
-#include "../controller/Command.h"
+#include "Command.h"
 
 static const std::unordered_map<std::string, CommandType> buttonCommandMap =
 {
@@ -21,11 +21,15 @@ static const std::unordered_map<int, CommandType> keyCommandMap = {
 	{Qt::Key::Key_Right, CMD::CLOCKWISE}, {Qt::Key::Key_Space, CMD::DROP}
 };
 
-// prevent QtWarningMsg from writing to console and ruining
-// ConsoleView's display
-void messageHandler(QtMsgType type,
-                    const QMessageLogContext &context,
-                    const QString &msg)
+// prevent QtWarningMsg from writing to console and ruining ConsoleView's
+// display.
+//
+// Qt documentation reference code was modified to implement this function for
+// Qt message handling. The reference code used is from:
+// https://doc.qt.io/qt-5/qtglobal.html#qInstallMessageHandler
+void messageOutput(QtMsgType type,
+                   const QMessageLogContext &context,
+                   const QString &msg)
 {
 	std::string message;
 	switch (type) {
@@ -42,14 +46,14 @@ void messageHandler(QtMsgType type,
 }
 
 GraphicsView::GraphicsView(const std::string& name, Game* game,
-						   Controller* controller)
+	                       Controller* controller)
 	: View{ game, controller }, _qtArgCount{ 0 }, _qtArgs{ nullptr },
 	_open{ false }, _name{ name }, _app(_qtArgCount, _qtArgs),
 	_window{ name, game, 0, 550, (int) game->getBoard().getCellSize() * 18 }
 {
-	qInstallMessageHandler(messageHandler);
+	qInstallMessageHandler(messageOutput);
 	// load quadris cell sprites
-	this->_window.loadSprites("./src/graphics/sprites.txt");
+	this->_window.loadSprites("./sprites.txt");
 	this->_window.open();
 	this->_open = true;
 }

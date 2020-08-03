@@ -12,9 +12,9 @@
 #include <QPushButton>
 #include <QSharedPointer>
 
-#include "../game/Game.h"
-#include "../blocks/Board.h"
-#include "../graphics/SpriteManager.h"
+#include "Game.h"
+#include "Board.h"
+#include "SpriteManager.h"
 
 typedef QSharedPointer<QPushButton> QButtonPtr;
 
