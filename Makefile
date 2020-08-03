@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = quadris1.0.0
-DISTDIR = /srv/DFSc/cs-teaching/home/u4/prscento/cs247/quadris/bin/quadris1.0.0
+DISTDIR = /home/paul/School/cs247/quadris/bin/quadris1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
@@ -117,6 +117,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
@@ -147,7 +149,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/precompile_header.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
@@ -174,7 +175,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		Observer.h \
 		Sprite2D.h \
 		SpriteManager.h \
-		stable.h \
 		StandardBlocks.h \
 		StandardLevels.h \
 		Subject.h \
@@ -241,6 +241,8 @@ Makefile: quadris.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
@@ -271,7 +273,6 @@ Makefile: quadris.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/precompile_header.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
@@ -320,6 +321,8 @@ Makefile: quadris.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri:
@@ -350,7 +353,6 @@ Makefile: quadris.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/precompile_header.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf:
@@ -383,13 +385,12 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents Arguments.h Block.h Board.h BoardIterator.h Command.h ConsoleView.h Controller.h Game.h GraphicsView.h Level.h Observer.h Sprite2D.h SpriteManager.h stable.h StandardBlocks.h StandardLevels.h Subject.h Trie.h View.h ViewManager.h Window.h bin/moc_predefs.h $(DISTDIR)/
+	$(COPY_FILE) --parents Arguments.h Block.h Board.h BoardIterator.h Command.h ConsoleView.h Controller.h Game.h GraphicsView.h Level.h Observer.h Sprite2D.h SpriteManager.h StandardBlocks.h StandardLevels.h Subject.h Trie.h View.h ViewManager.h Window.h bin/moc_predefs.h $(DISTDIR)/
 	$(COPY_FILE) --parents Arguments.cc Block.cc Board.cc BoardIterator.cc Command.cc ConsoleView.cc Controller.cc Game.cc GraphicsView.cc Level.cc main.cc Sprite2D.cc SpriteManager.cc Subject.cc Trie.cc View.cc ViewManager.cc Window.cc $(DISTDIR)/
 
 
 clean: compiler_clean 
 	-$(DEL_FILE) $(OBJECTS)
-	-$(DEL_FILE) bin/quadris.gch/c bin/quadris.gch/c++
 	-$(DEL_FILE) *~ core *.core
 
 
@@ -401,15 +402,6 @@ distclean: clean
 
 ####### Sub-libraries
 
-###### Precompiled headers
-bin/quadris.gch/c: stable.h 
-	@test -d bin/quadris.gch/ || mkdir -p bin/quadris.gch/
-	$(CC) $(CFLAGS) $(INCPATH) -x c-header -c stable.h -o bin/quadris.gch/c
-
-bin/quadris.gch/c++: stable.h 
-	@test -d bin/quadris.gch/ || mkdir -p bin/quadris.gch/
-	$(CXX) $(CXXFLAGS) $(INCPATH) -x c++-header -c stable.h -o bin/quadris.gch/c++
-
 mocclean: compiler_moc_header_clean compiler_moc_source_clean
 
 mocables: compiler_moc_header_make_all compiler_moc_source_make_all
@@ -418,15 +410,12 @@ check: first
 
 benchmark: first
 
-compiler_no_pch_compiler_make_all:
-compiler_no_pch_compiler_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
 compiler_moc_predefs_make_all: bin/moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) bin/moc_predefs.h
-bin/moc_predefs.h: bin/quadris.gch/c++ \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+bin/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o bin/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all: bin/moc_Window.cpp
@@ -446,7 +435,7 @@ bin/moc_Window.cpp: Game.h \
 		Window.h \
 		bin/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./bin/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/srv/DFSc/cs-teaching/home/u4/prscento/cs247/quadris -I/srv/DFSc/cs-teaching/home/u4/prscento/cs247/quadris -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include Window.h -o bin/moc_Window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./bin/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/paul/School/cs247/quadris -I/home/paul/School/cs247/quadris -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include Window.h -o bin/moc_Window.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -462,29 +451,24 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 
 ####### Compile
 
-bin/Arguments.o: Arguments.cc Arguments.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Arguments.o Arguments.cc
+bin/Arguments.o: Arguments.cc Arguments.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Arguments.o Arguments.cc
 
 bin/Block.o: Block.cc Block.h \
-		StandardBlocks.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Block.o Block.cc
+		StandardBlocks.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Block.o Block.cc
 
 bin/Board.o: Board.cc Board.h \
 		BoardIterator.h \
-		Block.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Board.o Board.cc
+		Block.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Board.o Board.cc
 
 bin/BoardIterator.o: BoardIterator.cc BoardIterator.h \
-		Block.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/BoardIterator.o BoardIterator.cc
+		Block.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/BoardIterator.o BoardIterator.cc
 
-bin/Command.o: Command.cc Command.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Command.o Command.cc
+bin/Command.o: Command.cc Command.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Command.o Command.cc
 
 bin/ConsoleView.o: ConsoleView.cc ConsoleView.h \
 		View.h \
@@ -498,9 +482,8 @@ bin/ConsoleView.o: ConsoleView.cc ConsoleView.h \
 		Level.h \
 		StandardLevels.h \
 		Controller.h \
-		Trie.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/ConsoleView.o ConsoleView.cc
+		Trie.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/ConsoleView.o ConsoleView.cc
 
 bin/Controller.o: Controller.cc Controller.h \
 		Game.h \
@@ -511,9 +494,8 @@ bin/Controller.o: Controller.cc Controller.h \
 		Block.h \
 		Command.h \
 		Level.h \
-		StandardLevels.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Controller.o Controller.cc
+		StandardLevels.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Controller.o Controller.cc
 
 bin/Game.o: Game.cc Game.h \
 		Subject.h \
@@ -524,9 +506,8 @@ bin/Game.o: Game.cc Game.h \
 		Command.h \
 		Level.h \
 		StandardLevels.h \
-		StandardBlocks.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Game.o Game.cc
+		StandardBlocks.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Game.o Game.cc
 
 bin/GraphicsView.o: GraphicsView.cc GraphicsView.h \
 		View.h \
@@ -542,9 +523,8 @@ bin/GraphicsView.o: GraphicsView.cc GraphicsView.h \
 		Controller.h \
 		Window.h \
 		SpriteManager.h \
-		Sprite2D.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/GraphicsView.o GraphicsView.cc
+		Sprite2D.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/GraphicsView.o GraphicsView.cc
 
 bin/Level.o: Level.cc StandardLevels.h \
 		Level.h \
@@ -554,9 +534,8 @@ bin/Level.o: Level.cc StandardLevels.h \
 		Board.h \
 		BoardIterator.h \
 		Block.h \
-		Command.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Level.o Level.cc
+		Command.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Level.o Level.cc
 
 bin/main.o: main.cc ConsoleView.h \
 		View.h \
@@ -576,28 +555,23 @@ bin/main.o: main.cc ConsoleView.h \
 		SpriteManager.h \
 		Sprite2D.h \
 		ViewManager.h \
-		Arguments.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/main.o main.cc
+		Arguments.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/main.o main.cc
 
-bin/Sprite2D.o: Sprite2D.cc Sprite2D.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Sprite2D.o Sprite2D.cc
+bin/Sprite2D.o: Sprite2D.cc Sprite2D.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Sprite2D.o Sprite2D.cc
 
 bin/SpriteManager.o: SpriteManager.cc SpriteManager.h \
-		Sprite2D.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/SpriteManager.o SpriteManager.cc
+		Sprite2D.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/SpriteManager.o SpriteManager.cc
 
 bin/Subject.o: Subject.cc Subject.h \
-		Observer.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Subject.o Subject.cc
+		Observer.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Subject.o Subject.cc
 
 bin/Trie.o: Trie.cc Trie.h \
-		Command.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Trie.o Trie.cc
+		Command.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Trie.o Trie.cc
 
 bin/View.o: View.cc View.h \
 		Game.h \
@@ -609,9 +583,8 @@ bin/View.o: View.cc View.h \
 		Command.h \
 		Level.h \
 		StandardLevels.h \
-		Controller.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/View.o View.cc
+		Controller.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/View.o View.cc
 
 bin/ViewManager.o: ViewManager.cc ViewManager.h \
 		View.h \
@@ -624,9 +597,8 @@ bin/ViewManager.o: ViewManager.cc ViewManager.h \
 		Command.h \
 		Level.h \
 		StandardLevels.h \
-		Controller.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/ViewManager.o ViewManager.cc
+		Controller.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/ViewManager.o ViewManager.cc
 
 bin/Window.o: Window.cc Window.h \
 		Game.h \
@@ -640,12 +612,11 @@ bin/Window.o: Window.cc Window.h \
 		StandardLevels.h \
 		SpriteManager.h \
 		Sprite2D.h \
-		Arguments.h \
-		bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/Window.o Window.cc
+		Arguments.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/Window.o Window.cc
 
-bin/moc_Window.o: bin/moc_Window.cpp bin/quadris.gch/c++
-	$(CXX) -c -include bin/quadris $(CXXFLAGS) $(INCPATH) -o bin/moc_Window.o bin/moc_Window.cpp
+bin/moc_Window.o: bin/moc_Window.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bin/moc_Window.o bin/moc_Window.cpp
 
 ####### Install
 

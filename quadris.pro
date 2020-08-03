@@ -1,12 +1,10 @@
 TEMPLATE = app
-CONFIG += c++17 precompile_header
+CONFIG += c++17
 TARGET = quadris
 
 QT += core gui widgets
 
 INCLUDEPATH += ./
-
-PRECOMPILED_HEADER = ./stable.h
 
 # Source Files
 SOURCES = $$files(*.cc, true)
