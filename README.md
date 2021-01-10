@@ -1,6 +1,6 @@
 # quadris
 
-C++ implementation of non-realtime Tetris using multithreading with mutex locks, smart pointers, and the QT graphics libary.
+C++ implementation of non-real time Tetris using multithreading with mutex locks, smart pointers, and the QT graphics libary.
 
 ![gui](./gui.png)
 ![text](./text.png)
