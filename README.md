@@ -8,7 +8,7 @@ C++ implementation of a Tetris-like game using multithreading with mutex locks, 
 
 ## Screenshots
 
-![gui](./ui.png)
+![gui](./ui.jpg)
 ![text](./text.png)
 
 ## [UML Diagram](./uml.pdf)
