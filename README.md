@@ -1,8 +1,14 @@
 # quadris
 
-C++ implementation of non-real time Tetris using multithreading with mutex locks, smart pointers, and the QT graphics libary.
+C++ implementation of a Tetris-like game using multithreading with mutex locks, smart pointers, and the Qt graphics libary.
 
-![gui](./gui.png)
+### To run:
+1. Build the project using qmake && make, or run build.sh
+2. Run the application by executing ./quadris
+
+## Screenshots
+
+![gui](./ui.png)
 ![text](./text.png)
 
 ## [UML Diagram](./uml.pdf)
